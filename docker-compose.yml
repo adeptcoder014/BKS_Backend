@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  redis:
+    image: 'redis'
+    container_name: redis
+    command: redis-server --replica-read-only no
+    environment:
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL,CONFIG
+      - ALLOW_EMPTY_PASSWORD=yes
+
+  nginx:
+    image: 'nginx:latest'
+    container_name: nginx
+    restart: on-failure
+    build: ./config/nginx
+    tty: true
+    ports:
+      - '80:80'
+      - '443:433'
+    volumes:
+      - /etc/letsencrypt
+    depends_on:
+      - api
+
+  api:
+    container_name: api
+    restart: always
+    build: ./
+    env_file: .env
+    ports:
+      - '${PORT}:${PORT}'
+    links:
+      - redis
+    environment:
+      - REDIS_URI=redis://redis
+      - DOCKER=true
+
+volumes:
+  ignore: {}

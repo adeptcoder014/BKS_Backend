@@ -1,0 +1,55 @@
+import { Router } from 'express';
+
+import authRoutes from './auth.js';
+import userRoutes from './user.js';
+import walletRoutes from './wallet.js';
+import instantGoldRoutes from './instantGold.js';
+import goldPriceRoutes from './goldPrice.js';
+import paymentRoutes from './payment.js';
+import appointmentRoutes from './appointment.js';
+import merchantRoutes from './merchant.js';
+import accountRoutes from './account.js';
+import addressRoutes from './address.js';
+import calculationRoutes from './calculation.js';
+import otherRoutes from './other.js';
+import planRoutes from './plan.js';
+import cyclePeriodRoutes from './cyclePeriod.js';
+import subscriptionRoutes from './subscription.js';
+import reserveRoutes from './reserve.js';
+import uploadedRoutes from './upload.js';
+import productRoutes from './product.js';
+import cartRoutes from './cart.js';
+import orderRoutes from './order.js';
+import returnOrderRoutes from './returnOrder.js';
+import auctionRoutes from './auction.js';
+import shopRoutes from './shop.js';
+import upiRoutes from './upi.js';
+
+const router = Router();
+
+router.use('/', otherRoutes);
+router.use('/auth', authRoutes);
+router.use('/users', userRoutes);
+router.use('/wallets', walletRoutes);
+router.use('/instantgold', instantGoldRoutes);
+router.use('/gold-price', goldPriceRoutes);
+router.use('/payments', paymentRoutes);
+router.use('/merchants', merchantRoutes);
+router.use('/appointments', appointmentRoutes);
+router.use('/accounts', accountRoutes);
+router.use('/addresses', addressRoutes);
+router.use('/calculations', calculationRoutes);
+router.use('/plans', planRoutes);
+router.use('/cycle-periods', cyclePeriodRoutes);
+router.use('/subscriptions', subscriptionRoutes);
+router.use('/reserves', reserveRoutes);
+router.use('/uploaded', uploadedRoutes);
+router.use('/products', productRoutes);
+router.use('/cart', cartRoutes);
+router.use('/orders', orderRoutes);
+router.use('/return-orders', returnOrderRoutes);
+router.use('/auctions', auctionRoutes);
+router.use('/shops', shopRoutes);
+router.use('/upi', upiRoutes);
+
+export default router;

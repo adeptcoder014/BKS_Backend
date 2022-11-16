@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sale Invoice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div style="box-sizing: border-box ;
+   padding: 20px 20px;
+   font-family: poppins ;
+   margin: auto ;
+   max-height:90%">
+    <img style="border-radius: 20px; 
+      display: block;
+      position:absolute;
+      top:0;
+      left:0;
+      right: 0;
+      margin: auto;
+      width:120px;
+      height:120px"
+      src="<%= logo %>"
+      alt="logo-image" />
+
+   
+
+      <div style="margin-top:60px;width:50%">
+        <h1 style="font-weight:500;margin-top:0px">
+          <%= merchant.name %>
+        </h1>
+        <p style="width:70%;   
+        font-size:17px;
+        position:relative;
+        bottom:32px;
+        color: #716f6f;
+        font-weight: 500;">
+          <%= merchant.address %>
+        </p>
+      </div>
+
+      <div style="font-size:17px;position: absolute;right:20px;top: 50px">
+        <h1 style="text-align:right;font-weight:500">
+          Invoice
+        </h1>
+        <div style='position:relative;bottom:32px'>
+
+          <p style="text-align:right ;color: #716f6f;
+          font-weight: 500;">
+            Original - Customer Copy
+          <p style="text-align:right ;color: #716f6f;
+          font-weight: 400;  position:relative;
+          bottom:25px;">
+            Date : <%= createdAt %>
+          </p>
+          <p style="text-align:right ;color: #716f6f;
+          font-weight: 400;  position:relative;
+          bottom:48px;">
+            Invoice No: <%= invoiceId %>
+          </p>
+          </p>
+        </div>
+      </div>
+
+      <div style="width:50%;font-size:17px;margin-top:20px;">
+        <h2>
+          Bill To
+        </h2>
+        <p style="color: #716f6f;
+        font-weight: 400;  position:relative;
+        bottom:32px;">
+          Name : <%= billTo.name %>
+        </p>
+        <p style="color: #716f6f;
+        font-weight: 400;  position:relative;
+        bottom:57px;">
+          Phone Number : <%= billTo.mobile %>
+        </p>
+        <p style="color: #716f6f;
+        font-weight: 400;  position:relative;
+        bottom:82px;">
+          Email : <%= billTo.email %>
+        </p>
+      </div>
+
+      <div style="width:50%; float:right;position:absolute;right:20px;top:250px">
+        <div style="font-size:17px;color:black">
+          <p style="text-align:right ;
+          font-weight: 400;">
+            PAN No. : <%= merchant.pan %>
+          <p style="text-align:right ;
+          font-weight: 400;  position:relative;
+          bottom:15px;">
+            GSTIN : <%= merchant.gstin %>
+          </p>
+          <p style="text-align:right ;
+          font-weight: 400;  position:relative;
+          bottom:28px;">
+            CIN No : <%= merchant.cin %>
+          </p>
+          </p>
+        </div>
+      </div>
+
+      <div style="position:relative; bottom:50px">
+        <p>
+          <span style="font-size:20px;font-weight:bold">Settled on : </span> 10/10/2022
+        </p>
+      </div>
+
+
+      <table style="width:100%;position:relative; bottom:50px;font-size:19px">
+        <tr>
+          <th>S.No</th>
+          <th>Item Description</th>
+          <th>Grams*</th>
+          <th>Rate per Gram</th>
+          <th>Total Amount</th>
+        </tr>
+        <%  items.map((item , i) => { %>
+        <tr style="text-align: center;">
+          <td><%= i + 1 %></td>
+          <td><%= item.description %> <div style="font-size:15px">HSN CODE: <%= item.hsn %></div></td>
+          <td><%= item.quantity %></td>
+          <td>₹ <%= item.rate %></td>
+          <td>₹ <%= item.amount %></td>
+        </tr>
+        <% })  %> 
+      </table>
+
+    
+
+      <hr style="border: 1px solid #ded0ba;position:relative;bottom:50px">
+
+      <table style="width:100%;font-size:17px;position:relative;bottom:40px">
+        <tr style="text-align: left;">
+          <th>Payment Details</th>
+          <th>Applied Tax</th>
+          <th>₹ <%= taxAmount %></th>
+        </tr>
+        <tr style="text-align: left;color:gray;font-weight:600">
+          <td>Payment ID: <%= paymentId %></td>
+          <td style="color:black">(1.5% CGST + 1.5% SGST)</td>
+        </tr>
+        <tr style="text-align: left;color:gray;font-weight:600">
+          <td>Payment Mode: <%= paymentMethod %></td>
+        </tr>
+      </table>
+
+      <table style="width:100%;font-size:17px;position:relative;bottom:40px">
+        <th style="position:relative;left:270px;font-weight:bold">Total Amount</th>
+        <th style="position:relative;left:100px;font-size:29px;font-weight:bold">₹ <%= totalAmount %></th>
+      </table>
+
+      <p style="font-size:17px;left:150px;position:relative;bottom:32px;left:415px;width:55%">
+        <strong>Total Amount in Words :&nbsp;</strong> <%= totalAmountInWords %>
+      </p>
+
+      <div style="font-size:17px">
+        <strong>Declaration :</strong>
+        <p style="color:gray;position:relative;bottom:20px">
+          We declare that the above quantity of goods are kept by the seller in a safe vault on
+          behalf of the buyer. It can be delivered in minted product as per the Terms & Conditions
+        </p>
+
+        <strong>*Disclaimer :</strong>
+        <p style="color:gray;position:relative;bottom:20px">
+          The gold grams you own are calculated by dividing the amount paid net of GST by the
+          gold rate and rounded down to 3 decimal places. For example, .0054 grams will be
+          rounded down to .005 grams.
+        </p>
+
+        <p style="color:gray;">
+          (E & O.E.)
+        </p>
+        <p style="color:gray;">
+          (Subject to Realization)
+        </p>
+      </div>
+
+      <div style="float:right;position:relative;bottom:100px">
+        <img style='width:250px'
+          src="<%= signature %>" />
+        <h3 style="position:relative;bottom:30px;left:25px">Authorized Signature</h3>
+      </div>
+</div>
+</body>
+
+</html>

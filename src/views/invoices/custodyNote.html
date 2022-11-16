@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Invoice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div style="box-sizing: border-box ;
+   padding: 30px 20px;
+   font-family: poppins ;
+   margin: auto ;
+   max-height:100%">
+    <img style="border-radius: 20px; 
+      display: block;
+      position:absolute;
+      top:0;
+      left:0;
+      right: 0;
+      margin: auto;
+      width:120px;
+      height:120px" ;
+      src="<%= logo %>"
+      alt="logo-image" />
+    <div style="margin-top: 20px;">
+      <!-- {/* ============= TOP_HEADER================================================ */} -->
+      <div style="margin-top:60px;width:50%">
+        <h1 style="font-weight:500;margin-top:0px">
+          <%= merchant.name %>
+        </h1>
+        <p style="width:74%;   
+        font-size:18px;
+        position:relative;
+        bottom:32px;
+        color: #716f6f;
+        font-weight: 500;">
+          <%= merchant.address %>
+        </p>
+      </div>
+
+
+      <div style="font-size:18px;position: absolute;right:20px;top: 50px">
+        <h2 style="position:relative;left:170px;margin-bottom:15px;text-align:right;margin-left:350px;font-weight:500;width:30%">
+          Gold Deposit
+          Note of Custody
+        </h2>
+        <div style='position:relative;bottom:32px'>
+
+          <p style="text-align:right ;color: #716f6f;
+          font-weight: 500;">
+            Original - Customer Copy
+          <p style="text-align:right ;color: #716f6f;
+          font-weight: 400;  position:relative;
+          bottom:25px;">
+            Date : <%= createdAt %>
+          </p>
+          <p style="text-align:right ;color: #716f6f;
+          font-weight: 400;  position:relative;
+          bottom:48px;">
+            Deposit No: INV00001
+          </p>
+          </p>
+        </div>
+      </div>
+
+
+
+
+
+      <div style="width:50%;font-size:18px;margin-top:20px;">
+        <h2>
+          To
+        </h2>
+        <p style="color: #716f6f;
+        font-weight: 400;  position:relative;
+        bottom:32px;">
+          Name : <%= certificateTo.name %>
+        </p>
+        <p style="color: #716f6f;
+        font-weight: 400;  position:relative;
+        bottom:57px;">
+          Phone Number : <%= certificateTo.mobile %>
+        </p>
+        <p style="color: #716f6f;
+        font-weight: 400;  position:relative;
+        bottom:82px;">
+          Email : <%= certificateTo.email %>
+        </p>
+      </div>
+
+
+
+      <div style="width:50%; float:right;position:absolute;right:20px;top:250px">
+
+        <div style="font-size:18px;color:black">
+
+          <p style="text-align:right ;
+          font-weight: 400;">
+            PAN No. : <%= merchant.pan %>
+          <p style="text-align:right ;
+          font-weight: 400;  position:relative;
+          bottom:15px;">
+            GSTIN : <%= merchant.gstin %>
+
+          </p>
+          <p style="text-align:right ;
+          font-weight: 400;  position:relative;
+          bottom:28px;">
+            CIN No : <%= merchant.cin %>
+
+          </p>
+          </p>
+        </div>
+      </div>
+
+
+
+
+
+      <table style="text-align:left;width:100%;position:relative; bottom:50px;font-size:19px">
+        <tr>
+          <th>S.No</th>
+          <th>Item Description</th>
+          <th></th>
+          <th></th>
+          <th>Grams*</th>
+        </tr>
+        <tr style="text-align: left;">
+          <td>1</td>
+          <td><%= item.description %></td>
+          <td></td>
+          <td></td>
+          <td><%= item.weight %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td style='font-size:16px'>HSN CODE: <%= item.hsn %></td>
+        </tr>
+      </table>
+      <hr style="border: 1px solid #ded0ba;position:relative;bottom:60px">
+
+
+
+
+
+
+
+      <p style="font-size:18px;width:100%">
+        <strong>Total Weight in Words : </strong> <%= item.weightInWords %>
+      </p>
+
+      <div style="font-size:18px">
+      <strong>Declaration :</strong>
+      <p style="color:gray;position:relative;bottom:20px">
+        We declare that the above quantity of goods are kept by the seller in a safe vault on
+        behalf of the buyer. It can be delivered in minted product as per the Terms & Conditions
+      </p>
+
+      <strong>*Disclaimer :</strong>
+      <p style="color:gray;position:relative;bottom:20px">
+        The gold grams you own are calculated by dividing the amount paid net of GST by the
+        gold rate and rounded down to 4 decimal places. For example, .00054 grams will be
+        rounded down to .0005 grams.
+      </p>
+      <p style="color:gray;">
+        (E & O.E.)
+      </p>
+      <p style="color:gray;">
+        (Subject to Realization)
+
+      </p>
+    </div>
+    <div style="float:right;position:relative;bottom:100px">
+
+      <img style='width:250px'
+        src="<%= signature %>" />
+      <h3 style="position:relative;bottom:30px;left:25px">Authorized Signature</h3>
+
+    </div>
+</body>
+
+</html>

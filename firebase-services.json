@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bks-mygold",
+  "private_key_id": "9f1076851a01e046cec937227406efcf8c2cdf03",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC9tGHu9yX7f9im\n08CQDIL6Y6cf6C6Qsc8xKOZFMi498DpGG/J/61uI+wfJ8XjqcaWOdijVJPKxnAZ5\n1A4wnNdV7T9kPyjmBnKHfC6un43hKJDSRCm2Uj0kY9LK3mwo2LGbwvOH/XfEIqdZ\nB5rkvnA41CM7rNDUJHwRSgu68UyeL29WxBKcpMC1GqlumwOqONZT5gOV4x5HQ53g\nvgPsMiSzRNMqXoHlOscDPauO0l8+iWnlg6zwiMONxcAZ/4Dl8Uu5b7FprWPIzYcl\nh8+ElCBaPZPKjQy70Izz9RR46B9MkD741lDVhVGVhk6VRXohuC0qDNTGw50OHJCE\nIGHfx6JnAgMBAAECggEAAWA7jZt79QpaV0DAlsrgcFHPYSsym0NkOKZj9SswrAEA\nCzN3W3d+NHd4TlNSszCb03Vb78p9es2iO7lOrl+U2D9eRFXeRWd/5nz/bFjP6KAo\nshMN0mVfotHuh3Ym3AJRAiDfL09RUmTbSIlblZPOsJApU+zO9EWczhX2u9EK4zgl\no8pC6/FjyHVbJz6IFh2jP/44f/K8Q0/GqzNeE32SULw5fLlhuRE6YJujj9hSYaPd\niB93oJtahNtYCuhCoH9h1MwmNsIEM5VsXXCZV2n4IlIZb33MkHmWdfHuFirrwKvJ\nkG5ELbpwZars/tVKEkAX8zVOS72buduZVkjSk4ZBwQKBgQD2X9/RrvHmhUqe7kMe\nT0F089o9Dx8Z2A++bPMsZm9Tm64UkbeQsXxig9rhonjuiXTmjjFuh7qsDUFgYsq6\nVc6k0fjQiXgx929cg5BczYqiPwr/MtCqTpXh5FoXCGy3Ma617Hm/Ts5QGPKTpT3Q\nsZ+gHnC9E4v5L0FncfXgxukgVwKBgQDFHbjI5aHEAfWXSIB4NzXWQ5t81LtJWI/M\nnWwViNK4JxiZdm8Mm1rgdPb7v+PpAiRl59aB3sMSuJomffRl7jNZnMsRk5tdelJY\nfBtKfq3R94a6g1LLesqAOh8aHEgbITuHfqEtWvAG0Jl6FH/QdnhO8oSpoJk6mTSj\nNaAqvTkEcQKBgF1fvK31hcx+G+fcGSf1lbNDcCTQBFOBJYZgOFFNiUfAqts01sNJ\n4QBdRKlbMEYHZnyyy10+p6rpYyuqhXbVanng8lHmp90YD+aaHi5t3+rZxcsucRL6\nsadpKhOsp7dOZw6fzwyIS3zj15vJdoIPr5W5s7SVIemQ1VLlR/CmslgFAoGBALdk\nVb2j2ANzBzm/XLd8Nnyo3gsgKTeuS+vFMwA+Ej7/MOXmyJ7kE4Ltj7Td7X+mXJLr\nRioCRWAvnEvft/j1y5S+SjiKKmyoF+D3ZrTCc5n8P79b2zYxgiIW8UTrtzJ2ktoX\nOIHoL5VHkuOAGwKqlnhtLnxbTPS2AcEvbVsWPewhAoGAdgkcejvJr7I21vDa1JuV\ndRyGfV45vK0MrBGp+pYcov/SRB5qnil5ZN7vWKscUdZ/H1k3VnRQaCRlHnPVvyFL\nZA0d3eNAOaWSHAESNi0ZJXnxl47FOdp8Pp5Tk9YfaeP7N9Rj9WLXoWHJKH4fFIUf\nJ6UWT8SoGbR/7dIbMYFYoQc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-oapux@bks-mygold.iam.gserviceaccount.com",
+  "client_id": "109155230420723202290",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-oapux%40bks-mygold.iam.gserviceaccount.com"
+}
